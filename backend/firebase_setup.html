@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Firebase Setup</title>
+    <script type="module">
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.4.0/firebase-app.js";
+        import { getAnalytics } from "https://www.gstatic.com/firebasejs/11.4.0/firebase-analytics.js";
+
+        // Your web app's Firebase configuration
+        const firebaseConfig = {
+            apiKey: "AIzaSyBjxFEqNO5OceFCqUJON9Rf2DUOfKXDtGQ",
+            authDomain: "krishi-service-provider.firebaseapp.com",
+            projectId: "krishi-service-provider",
+            storageBucket: "krishi-service-provider.firebasestorage.app",
+            messagingSenderId: "147450974056",
+            appId: "1:147450974056:web:d3648253b0feb4b6e990dd",
+            measurementId: "G-52KJNMSPRN"
+        };
+
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const analytics = getAnalytics(app);
+    </script>
+</head>
+<body>
+    <h1>Firebase Setup Complete</h1>
+</body>
+</html> 
