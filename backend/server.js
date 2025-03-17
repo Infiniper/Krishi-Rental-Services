@@ -2,7 +2,6 @@ const express = require('express');
 const { Pool } = require('pg');
 const pool = require('./db');
 const path = require('path');
-// pg_dump -U postgres -h localhost -d krishi_rental_services -F c -f backup.dump
 const app = express();
 const port = 3000;
 require('dotenv').config();
@@ -15,16 +14,22 @@ app.get('/', (req, res) => {
     res.json({ message: 'Welcome to the backend server!' });
 });
 
+// testing if database is connected
+app.get('/db', async (req, res) => {
+    const result = await pool.query('SELECT NOW()');
+    res.json({ success: true, time: result.rows[0] });
+}); 
+
 // Route to handle user login
-app.post('/api/login', async (req, res) => {
-    const { phonenumber, password, role } = req.body;
+app.post('/login', async (req, res) => {
+    const { phonenumber, password, roleid } = req.body;
 
     try {
-        const result = await pool.query('SELECT * FROM users WHERE phonenumber = $1 AND password = $2 AND role = $3', [phonenumber, password, role]);
+        const result = await pool.query('SELECT * FROM users WHERE phonenumber = $1 AND PasswordHash = $2 AND roleid = $3', [phonenumber, password, roleid]);
         
         if (result.rows.length > 0) {
             // Send back the role and user data to the client
-            res.json({ success: true, role: role, user: result.rows[0] });
+            res.json({ success: true, roleid: roleid, user: result.rows[0] });
         } else {
             res.json({ success: false, message: 'No user found' });
         }
@@ -34,22 +39,8 @@ app.post('/api/login', async (req, res) => {
     }
 });
 
-// Route to get Firebase configuration
-app.get('/api/firebase-config', (req, res) => {
-    const firebaseConfig = {
-        apiKey: "AIzaSyBjxFEqNO5OceFCqUJON9Rf2DUOfKXDtGQ",
-        authDomain: "krishi-service-provider.firebaseapp.com",
-        projectId: "krishi-service-provider",
-        storageBucket: "krishi-service-provider.firebasestorage.app",
-        messagingSenderId: "147450974056",
-        appId: "1:147450974056:web:d3648253b0feb4b6e990dd",
-        measurementId: "G-52KJNMSPRN"
-    };
-    res.json(firebaseConfig);
-});
-
 // Step 1: Initial registration check
-app.post('/api/register/init', async (req, res) => {
+app.post('/register/init', async (req, res) => {
     const { phonenumber } = req.body;
     
     if (!phonenumber) {
@@ -85,8 +76,9 @@ app.post('/api/register/init', async (req, res) => {
     }
 });
 
+
 // Step 2: Complete registration
-app.post('/api/register/complete', async (req, res) => {
+app.post('/register/complete', async (req, res) => {
     const { phonenumber, name, password, role, address } = req.body;
     
     // Validate required fields
@@ -100,7 +92,7 @@ app.post('/api/register/complete', async (req, res) => {
     try {
         // Insert new user into database
         const newUser = await pool.query(
-            'INSERT INTO users (phonenumber, name, password, role, address) VALUES ($1, $2, $3, $4, $5) RETURNING *',
+            'INSERT INTO users (phonenumber, name, PasswordHash, roleid, address) VALUES ($1, $2, $3, $4, $5) RETURNING *',
             [phonenumber, name, password, role, address]
         );
         
