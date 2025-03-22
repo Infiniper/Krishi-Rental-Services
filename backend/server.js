@@ -4,13 +4,21 @@ const pool = require('./config/db');
 const path = require('path');
 const bcrypt = require('bcrypt');
 const authRoutes = require('./routes/auth');
+const bookingRoutes = require('./routes/bookingRoutes');
+const machineryRoutes = require('./routes/machineryRoutes');
+// const paymentRoutes = require('./routes/paymentRoutes');
 const app = express();
 const port = 3000;
 require('dotenv').config();
 
 // Middleware to parse JSON requests
 app.use(express.json());
-app.use('/auth', authRoutes);
+
+// Here I am Registering routes.
+app.use('/api/auth', authRoutes);
+app.use('/api/bookings', bookingRoutes);
+app.use('/api/machinery', machineryRoutes);
+// app.use('/api/payments', paymentRoutes);
 
 // Route for the root URL
 app.get('/', (req, res) => {
@@ -19,11 +27,16 @@ app.get('/', (req, res) => {
 
 // testing if database is connected
 app.get('/db', async (req, res) => {
-    const result = await pool.query('SELECT NOW()');
-    res.json({
-        message: 'Welcome! Your database is working',
-        success: true, time: result.rows[0]
-    });
+    try {
+        const result = await pool.query('SELECT NOW()');
+        res.json({
+            message: 'Welcome! Your database is working',
+            success: true, time: result.rows[0]
+        });
+    } catch (err) {
+        console.error(err);
+        res.status(500).json({ success: false, message: 'Database connection failed' });
+    }
 });
 
 // Start the server
