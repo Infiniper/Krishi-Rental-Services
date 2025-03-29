@@ -1,0 +1,96 @@
+.margin{
+    color: rgba(255, 0, 0, 0);
+    margin-top: 50px;
+    }
+
+.container h1{
+    font-size: 4rem;
+    font-weight: bold;
+    text-align: center;
+    font-family: lora;
+}
+
+img {
+    width: 800px;
+    height: auto;
+    border-radius: 5%;
+}
+
+.box {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 20px;
+    justify-content: center;
+}
+
+.details {
+    margin-left: 2%;
+    width: 45%;
+    background: ghostwhite;
+    border-radius: 5%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+}
+
+.details h2 {
+    font-size: 2.5rem;
+    font-family: lora;
+
+}
+
+.types {
+    display: flex;
+    justify-content: space-between;
+}
+
+.types h3 {
+    display: flex;
+    font-size: 1.75rem;
+    border: 3px solid #4dae4f;
+    border-radius: 10px;
+    align-items: center;
+    color: white;
+    background-color: #4dae4f;
+    padding: 5px;
+    font-family: lora;
+}
+
+.model{
+    font-size: 2rem;
+    margin: 0px;
+    padding: 0px;
+    font-family: lora;
+}
+
+.price {
+    font-size: 2rem;
+    font-family: lora;
+}
+
+.further {
+    font-size: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.details ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.details li {
+    font-size: 1.3rem;
+    border-bottom: 1px solid black;
+    padding-bottom: 0.5rem;
+    margin-bottom: 0.5rem;
+    font-family: lora;
+}
+
+.booking {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+}
