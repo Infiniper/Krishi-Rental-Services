@@ -1,0 +1,26 @@
+.container {
+    display: block;
+}
+
+.image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.container img:nth-child(1) {
+    position: block;
+    z-index: 0;
+    
+}
+
+.container img:nth-child(2) {
+    position: absolute; /* Change to absolute to position it on top of the first image */
+    top: 10%; /* Align to the top of the container */
+    left: 17%; /* Align to the left of the container */
+    z-index: 1; /* Ensure it is above the first image */
+    object-fit: cover;
+    width: 65%; /* Reduce the width of the second image */
+    height: auto; /* Maintain aspect ratio */
+}
+

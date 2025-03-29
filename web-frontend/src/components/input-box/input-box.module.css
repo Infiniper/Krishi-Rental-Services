@@ -1,0 +1,20 @@
+.inputBox {
+    border: 2px solid #4CAF50; /* Green border */
+    border-radius: 8px; /* Rounded corners */
+    padding: 10px; /* Padding inside the input */
+    width: auto; /* Allow width to be defined by parent or inline styles */
+    max-width: 300px; /* Set a maximum width for the input box */
+    font-size: 16px; /* Font size */
+    color: #333; /* Dark text color */
+    transition: border-color 0.3s ease; /* Smooth transition for border color */
+}
+
+.inputBox:focus {
+    border-color: #45a049; /* Darker green border on focus */
+    outline: none; /* Remove default outline */
+}
+
+.inputBox::placeholder {
+    color: #a0a0a0; /* Light gray placeholder text */
+    opacity: 1; /* Ensure placeholder is fully opaque */
+}

@@ -1,0 +1,203 @@
+.header {
+    position: fixed; /* Keep the header fixed at the top */
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(255, 255, 255, 0); /* Transparent background */
+    padding: 10px 20px; /* Padding for the header */
+    display: flex; /* Flexbox for layout */
+    justify-content: space-between;
+    align-items: center; /* Center items vertically */
+    z-index: 1000; /* Ensure it stays above other content */
+} 
+
+
+
+/* Flex container for the header */
+.header-content {
+    display: flex;
+    justify-content: space-between; /* Space between hamburger and logo */
+    width: 100%; /* Full width */
+}
+
+/* Center the logo */
+.logo {
+    flex: 1; /* Allow the logo to take up space */
+    display: flex; /* Use flexbox for centering */
+    justify-content: left; /* Center horizontally */
+    align-items: center; /* Center vertically */
+
+}
+
+.logo img {
+    max-width: 150px; /* Limit logo size */
+    height: auto; /* Maintain aspect ratio */
+}
+
+.hamburger {
+    display: none; /* Hidden  by default */
+    flex-direction: column; /* Stack lines */
+    cursor: pointer; /* Pointer cursor on hover */
+}
+
+.hamburger div {
+    width: 25px; /* Hamburger line width */
+    height: 3px; /* Hamburger line height */
+    background-color: #333; /* Hamburger line color */
+    margin: 4px 0; /* Space between lines */
+}
+
+/* Navigation styles */
+.nav {
+    display: flex; /* Use flexbox for horizontal layout */
+    justify-content: right;
+    gap: 20px; /* Space between links */
+}
+
+.nav ul {
+    display: flex; /* Make the list a flex container */
+    align-items: center;
+    list-style-type: none; /* Remove bullet points */
+    padding: 0; /* Remove default padding */
+    margin: 0; /* Remove default margin */
+}
+
+.nav li {
+    margin: 1.3rem; /* Remove margin from list items */
+    font-size: 1.3rem;
+}
+
+.nav a {
+    color: #333; /* Link color */
+    text-decoration: none; /* Remove underline */
+    padding: 10px; /* Add padding for clickable area */
+    transition: color 0.3s; /* Smooth transition for hover effect */
+}
+
+.nav a:hover {
+    color: #a0e5a4; /* Change color on hover */
+    border: 1px solid #003722;
+    width: 200px; /* Or any desired width */
+    height: 50px; /* Or any desired height */
+    background-color: #003722; /* For visual clarity */
+    border-radius: 25px; /* Half of the height (50px / 2 = 25px) */
+}
+
+.login-signup {
+    background-color: #87BBA2; /* Button color */
+    color: white; /* Button text color */
+    padding: 10px 15px; /* Button padding */
+    border: none; /* Remove border */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+}
+
+.profileIcon {
+    position: relative; /* Position for dropdown */
+}
+
+.profileIcon img {
+    border-radius: 50%; /* Make the profile photo circular */
+    border: 2px solid #87BBA2; /* Add a border around the profile photo */
+    width: 50px; /* Set width for consistency */
+    height: 50px; /* Set height for consistency */
+    object-fit: cover; /* Ensure the image covers the area without distortion */
+    transition: transform 0.3s ease; /* Smooth transition for hover effects */
+}
+
+.profileIcon:hover img {
+    transform: scale(1.1); /* Slightly enlarge the image on hover */
+}
+
+.dropdown {
+    display: none; /* Hidden by default */
+    position: absolute; /* Position dropdown */
+    right: 0; /* Align to the right */
+    background-color: white; /* Dropdown background */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Shadow for dropdown */
+    z-index: 1001; /* Ensure dropdown is above other content */
+}
+
+.profileIcon:hover .dropdown {
+    display: block; /* Show dropdown on hover */    
+}
+
+.profileIcon:hover .dropdown ul { 
+    position: absolute;
+    left: -110px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #def7dc;
+}
+
+/* Responsive Styles */
+@media (max-width: 1000px) {
+    .header {
+        display: inline;
+    }
+
+    .header-content {
+        display: inline;
+        justify-content: space-between;
+        width: 100%;
+        align-items: center;
+    }
+
+    .logo {
+        position: absolute;  
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        align-items: center;
+        top: 10%;
+        left: 0;
+
+    }
+
+    .logo img {
+        display: absolute;  
+        top: 10%;
+        left: 0;
+    }
+
+    .nav {
+        display: none; /* Hide nav links */
+    }
+
+    .hamburger {
+        display: block; /* Show hamburger icon */
+        z-index: 1002;
+    }
+
+
+    .nav.open {
+        display: flex; /* Show nav links when menu is open */
+        flex-direction: column; /* Stack links vertically */
+        position: absolute; /* Position the nav */
+        top: 0px; /* Adjust based on header height */
+        left: 0; /* Align to the left */
+        background-color: #def7dc; /* Background for dropdown */
+        width: 100%; /* Full width */
+        z-index: 1000; /* Ensure it stays above other content */
+    }
+
+    .nav.open ul {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background-color: #def7dc;
+    }
+
+    .profileIcon:hover .dropdown ul { 
+        position: fixed;
+        left: 8px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background-color: #def7dc;
+    }
+}
