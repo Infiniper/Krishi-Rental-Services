@@ -1,0 +1,76 @@
+.container{
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin: 10px;
+    padding: 15px;
+    max-width: 300px;
+    max-height: auto;
+    text-align: left;
+    position: relative;
+    overflow: hidden;
+}
+
+.container:hover{
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+ 
+.image{
+    width: 100%;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+}
+
+.container :hover image{
+    transform: scale(1.05);
+}
+ 
+.details{
+    padding: 10px;
+}
+
+.details p {
+    color: black;
+}
+ 
+.title{
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #333;
+    margin: 10px 0;
+}
+ 
+.price{
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #000;
+    font-family: noto, serif;
+
+}
+ 
+.distance{
+    font-size: 1.2rem;
+    color: #777;
+    margin: 5px 0;
+
+}
+
+
+@media screen and (max-width: 1000px) {
+    .container {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        max-width:500px;
+    }
+    .image{
+height: min-content;
+width: 250px;
+        border-radius: 8px;
+        transition: transform 0.3s ease;
+    }
+}

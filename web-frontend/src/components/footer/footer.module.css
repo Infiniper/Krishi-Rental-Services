@@ -1,0 +1,185 @@
+.footer {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr; /* Four equal columns */
+    grid-template-rows: auto auto auto; /* Automatic height for rows */
+    grid-template-areas: 
+        "logo logo logo logo logo"
+        "nav contact legal follow  appLinks"
+        "newsletter newsletter newsletter newsletter newsletter "
+        "copyright copyright copyright copyright copyright"; /* Copyright spans all columns */
+    padding: 20px;
+    background-color: rgb(0, 54, 34); /* Light background color */
+    border-top: 1px solid #ccc; /* Top border for separation */
+    padding: 2rem;
+}
+
+
+.description {
+    grid-area: logo; /* Assign to logo area */
+}
+
+.navigation {
+    grid-area: nav; /* Assign to navigation area */
+    text-align: left; /* Align text to the left */
+}
+
+.navigation h4 {
+    margin-bottom: 10px; /* Add some space below the heading */
+}
+
+.navigation ul {
+    list-style-type: none; /* Remove bullet points */
+    padding: 0; /* Remove default padding */
+}
+
+.navigation li {
+    margin: 5px 0; /* Add some margin between list items */
+}
+
+.contactInfo {
+    grid-area: contact; /* Assign to contact area */
+}
+
+.contactInfo h4 {
+    margin-bottom: 10px; /* Add some space below the heading */
+}
+
+.contactInfo ul {
+    list-style-type: none; /* Remove bullet points */
+    padding: 0; /* Remove default padding */
+}
+
+.contactInfo li {
+    margin: 5px 0; /* Add some margin between list items */
+}
+
+.socialMedia {
+    grid-area: follow; /* Assign to follow area */
+}
+
+.socialMedia h4 {
+    margin-bottom: 10px; /* Add some space below the heading */
+}
+
+.socialMedia ul {
+    list-style-type: none; /* Remove bullet points */
+    padding: 0; /* Remove default padding */
+}
+
+.socialMedia li {
+    margin: 5px 0; /* Add some margin between list items */
+}
+
+.legalPolicies {
+    grid-area: legal; /* Assign to legal area */
+    
+}
+
+.legalPolicies h4 {
+    margin-bottom: 10px; /* Add some space below the heading */
+}
+
+.legalPolicies ul {
+    list-style-type: none; /* Remove bullet points */
+    padding: 0; /* Remove default padding */
+}
+
+.legalPolicies li {
+    margin: 5px 0; /* Add some margin between list items */
+}
+
+.newsletter {
+    grid-area: newsletter; /* Assign to newsletter area */
+}
+
+.appLinks {
+    grid-area: appLinks; /* Assign to app download area */
+}
+
+.appLinks h4 {
+    margin-bottom: 10px; /* Add some space below the heading */
+}
+
+.appLinks ul {
+    list-style-type: none; /* Remove bullet points */
+    padding: 0; /* Remove default padding */
+}
+
+.appLinks li {
+    margin: 5px 0; /* Add some margin between list items */
+}
+
+
+
+.copyright {
+    grid-area: copyright; /* Assign to copyright area */
+    text-align: center; /* Center text for copyright */
+    margin-top: 20px; /* Add some margin for spacing */
+}
+
+/* Additional styling for elements */
+.logo {
+    max-width: 150px; /* Limit logo size */
+}
+
+h4 {
+    margin: 10px 0; /* Margin for headings */
+    color: #87BBA2;
+    font-family: 'Raleway', sans-serif;
+
+}
+
+p {
+    margin: 5px 0px; /* Margin for paragraphs */
+    color: #DFF6DD;
+    font-family: 'Lora', serif; /* Use Raleway for body text */
+
+}
+
+input[type="email"] {
+    padding: 10px; /* Padding for input */
+    width: 100%; /* Full width */
+    margin-bottom: 10px; /* Space below input */
+    background-color: #DFF6DD;
+}
+
+a {
+    text-decoration: none; /* Remove underline from links */
+    color: #DFF6DD; /* Link color */
+}
+
+a:hover {
+    text-decoration: underline; /* Underline on hover */
+}
+
+ul {
+    list-style-type: none;
+  }
+
+li {
+    margin: 3px 0px; /* Margin for paragraphs */
+}
+
+strong {
+    color: #87BBA2;
+}
+
+/* Media query for mobile responsiveness */
+@media (max-width: 1024px) {
+    .footer {
+        grid-template-columns: 1fr 1fr; /* Single column layout */
+        grid-template-rows: auto auto auto; /* Automatic height for rows */
+        grid-template-areas: 
+            "logo logo"
+            "nav follow"
+            "contact legal"
+            "appLinks appLinks"
+            "newsletter newsletter"
+            "copyright copyright"; /* Stack all elements vertically */
+    }
+
+    .copyright {
+        text-align: center; /* Center text for copyright */
+        margin-top: 20px; /* Add some margin for spacing */
+    }
+}

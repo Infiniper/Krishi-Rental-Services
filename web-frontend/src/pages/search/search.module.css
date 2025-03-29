@@ -1,0 +1,33 @@
+.list{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 10px;
+
+}
+
+.title{
+    flex: 1;
+    font-size: 3rem;
+    font-family: lora,serif;
+    font-weight: bold;
+    color: #013723;
+    margin-left: 20px;
+}
+
+.margin{
+color: rgba(255, 0, 0, 0);
+margin-top: 40px;
+}
+
+
+@media (max-width: 1000px){
+    .list{
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .title{
+        margin-bottom: 20px;
+    }
+}
