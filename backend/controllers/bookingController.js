@@ -14,9 +14,11 @@ exports.getBookings = async (req, res) => {
 // Create a new booking
 exports.createBooking = async (req, res) => {
     try {
-        const { clientid, machineryid, scheduledtime } = req.body;
+        const { machineryid, scheduledtime } = req.body;
+        // const clientid = req.user.userId; // Extract user ID from JWT
+        const { clientid } = req.body; // Just for testing
 
-        if (!clientid || !machineryid || !scheduledtime) {
+        if (!machineryid || !scheduledtime) {
             return res.status(400).json({ message: "All fields are required" });
         }
 
@@ -45,12 +47,23 @@ exports.createBooking = async (req, res) => {
 exports.approveBooking = async (req, res) => {
     try {
         const bookingid = parseInt(req.params.bookingid, 10);
+        const ownerid = req.user.userId; // Extract user ID from JWT
 
         // Validate bookingid
         if (isNaN(bookingid) || bookingid <= 0) {
             return res.status(400).json({ message: "Invalid booking ID" });
         }
-       
+
+        // Check if the booking exists and belongs to the machinery owned by the user
+        const bookingCheck = await pool.query(
+            "SELECT b.*, m.ownerid FROM bookings b JOIN machinery m ON b.machineryid = m.machineryid WHERE b.bookingid = $1 AND m.ownerid = $2",
+            [bookingid, ownerid]
+        );
+
+        if (bookingCheck.rows.length === 0) {
+            return res.status(403).json({ message: "Unauthorized: You can only approve bookings for your own machinery" });
+        }
+
         // Allowed statuses
         // const validBookingStatuses = ["Scheduled", "Completed", "Cancelled", "Approved"];
 
@@ -67,7 +80,7 @@ exports.approveBooking = async (req, res) => {
         const query = `UPDATE bookings SET status = $1 WHERE bookingid = $2 RETURNING *`;
         const result = await pool.query(query, [newStatus, bookingid]);
 
-       
+
 
         if (result.rows.length === 0) {
             return res.status(404).json({ message: "Booking not found" });
