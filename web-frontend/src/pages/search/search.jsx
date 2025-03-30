@@ -49,6 +49,11 @@ const Search = () => {
         fetchMachinery();
     }, []);
 
+ // Function to generate random distance between 0 to 50 km
+ const getRandomDistance = () => {
+    return Math.floor(Math.random() * 51); // Generates a random number between 0 and 50 (inclusive)
+};
+
     return (
         <div>
             <Header />
@@ -58,11 +63,14 @@ const Search = () => {
                 {machinery.map((item) => (
                     
                     <SearchCard
+                        id={item.machineryid}
                         key={item.machineryid}
-                        image={item.images && item.images.length > 0 ? item.images[0] : "default-image-url"} // ✅ Use first image or default
-
+                        image={item.images && item.images.length > 0 ? item.images[0] : "default-image-url"} 
+                        // ✅ Use first image or default
                         title={item.model}
-                        distance={"10 km"} // Placeholder, add real data later
+                        // distance={"10 km"} // Placeholder, add real data later
+                        distance={`${getRandomDistance()} km`} //  Display random distance
+                        price={`₹${item.price}`} 
                         price={`₹${item.price}`} // Adjust based on your DB structure
                         available={item.status}
                     />

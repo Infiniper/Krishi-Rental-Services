@@ -1,27 +1,40 @@
 .container{
-    background: #ffffff;
+    background: ghostwhite;
     border-radius: 12px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     margin: 10px;
     padding: 15px;
     max-width: 300px;
-    max-height: auto;
+    max-height: 600px;
     text-align: left;
     position: relative;
     overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .container:hover{
     transform: scale(1.05);
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
-
  
+.image-container{
+    width: 200px;
+    height: 300px;
+    overflow: hidden;
+} 
+
+
 .image{
     width: 100%;
+    height: 100%;
+    object-fit: cover;
     border-radius: 8px;
     transition: transform 0.3s ease;
+
+
 }
 
 .container :hover image{
@@ -56,6 +69,14 @@
     color: #777;
     margin: 5px 0;
 
+}
+.available{
+    display:block;
+    width: 38%;
+    background-color: rgb(137, 209, 254);
+     font-size: 1.25rem;
+     border-radius: 10%;
+     padding-left: 7px;
 }
 
 

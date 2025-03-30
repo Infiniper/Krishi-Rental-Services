@@ -94,3 +94,10 @@
     align-items: center;
     margin-top: 20px;
 }
+
+/* ********************************** */
+.status {
+    color: green;
+    font-weight: bold;
+  }
+  

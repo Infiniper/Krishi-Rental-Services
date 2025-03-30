@@ -1,26 +1,55 @@
 .container {
-    display: block;
-
-
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
     margin: 20px;
+    margin-right: 5%;
+    margin-left: 5%;
 }
 
 .container h2 {
-    font-family: 'Poppins', sans-serif;
-    font-size: 48px;
-    margin-bottom: 10px;
+    font-family: 'Lora';
 }
 
-input {
-    width: 80%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    margin-bottom: 10px;
-    font-size: 16px;
+.container ul{
+    padding: 5%;
+    margin-left: 20%;
 }
 
-input:focus {
-    border-color: #A0E4A5; /* Change border color on focus */
-    outline: none; /* Remove default outline */
+.container ul li {
+    margin-bottom: 5%;
 }
+.container ul h2 {
+    font-size: 5rem;
+}
+
+.button {
+    background-color: #4CAF50; /* Green background */
+    border: none; /* No border */
+    color: white; /* White text */
+    padding: 15px 32px; /* Padding */
+    text-align: center; /* Centered text */
+    text-decoration: none; /* No underline */
+    display: inline-block; /* Inline-block element */
+    font-size: 40px; /* Font size */
+    font-family: lora;
+    margin: 4px 2px; /* Margin */
+    cursor: pointer; /* Pointer cursor on hover */
+    border-radius: 8px; /* Rounded corners */
+    transition: background-color 0.3s ease; /* Smooth transition for background color */
+  }
+  
+  .button:hover {
+    background-color: #45a049; /* Darker green on hover */
+  }
+  
+
+  video {
+    border-radius: 10px;
+    width: 1000px;
+    height: auto;
+    margin-top: 20%;
+    margin-bottom: 20%;
+
+  }

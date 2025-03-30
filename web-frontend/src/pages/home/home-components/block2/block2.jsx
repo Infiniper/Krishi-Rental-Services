@@ -8,16 +8,33 @@ const Block2 = () => {
     const handleSearch = () => {
         // Implement search functionality here
         alert(`Searching for: ${searchTerm}`);
-    }; 
+    };
 
     return (
         <div className={styles.container}>
-            <h2>Which machinery are you looking for?</h2>
-            <InputBox placeholder="Enter machinery name" onChange={setSearchTerm}/>
-            <Button1 label="Search" onClick={handleSearch}/>
+            <div>
+                <video
+                    src="https://res.cloudinary.com/ddyxqpatx/video/upload/v1743350527/se/wagmlb2pmnuhbzymu7ao.mp4"
+                    autoPlay
+                    loop
+                    muted
+                    controls={false}
+                />
+            </div>
+            <div>
+                <ul>
+                    <li>
+                        <h2>Kisaan Ka Digital Saathi</h2>
+                    </li>
+                    <li>
+                        <a href="http://localhost:3000/search" >
+                        <button className={styles.button}> Nearby Machinery</button>
+                        </a>
+                    </li>
+                </ul>
+            </div>
         </div>
     );
 };
 
 export default Block2;
-

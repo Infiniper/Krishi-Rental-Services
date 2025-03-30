@@ -10,7 +10,7 @@ const Home = () => {
     <div>
           <Header />
     <Block1 />
-    {/* <Block2 /> */}
+    <Block2 />
     <Footer />
 </div>
   );
