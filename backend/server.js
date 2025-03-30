@@ -3,12 +3,12 @@ const { Pool } = require('pg');
 const pool = require('./config/db');
 const path = require('path');
 const bcrypt = require('bcrypt');
-const authRoutes = require('./routes/auth');
+const authRoutes = require('./routes/authRoutes');
 const bookingRoutes = require('./routes/bookingRoutes');
 const machineryRoutes = require('./routes/machineryRoutes');
 // const paymentRoutes = require('./routes/paymentRoutes');
 const app = express();
-const port = 3000;
+const port = 5000;
 require('dotenv').config();
 
 // Middleware to parse JSON requests

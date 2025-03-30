@@ -1,5 +1,6 @@
 const express = require("express");
 const router = express.Router();
+// const { authenticate } = require("../middleware/authMiddleware");
 const {
     createBooking,
     approveBooking,
@@ -8,19 +9,19 @@ const {
     getBookings
 } = require("../controllers/bookingController");
 
-// Create a new booking
-router.post("/", createBooking);
+// Create a new booking (Protected)
+router.post("/",   createBooking);
 
-// Approve booking
-router.put("/:bookingid/approve", approveBooking);
+// Approve booking (Protected)
+router.put("/:bookingid/approve",   approveBooking);
 
-// Cancel booking
-router.put("/:id/cancel", cancelBooking);
+// Cancel booking (Protected)
+router.put("/:id/cancel",   cancelBooking);
 
-// Mark booking as completed
-router.put("/:id/complete", completeBooking);
+// Mark booking as completed (Protected)
+router.put("/:id/complete",   completeBooking);
 
-// Get all bookings
-router.get("/", getBookings);
+// Get all bookings (Protected)
+router.get("/",   getBookings);
 
 module.exports = router;
