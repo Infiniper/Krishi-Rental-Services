@@ -10,7 +10,7 @@
     font-family: lora;
 }
 
-img {
+.container img {
     width: 800px;
     height: auto;
     border-radius: 5%;
