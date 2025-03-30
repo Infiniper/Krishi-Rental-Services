@@ -1,12 +1,12 @@
 const admin = require("firebase-admin");
 // const jwt = require("jsonwebtoken");
 const pool = require("../config/db");
-const serviceAccount = require("../config/firebase-adminsdk.json");
+// const serviceAccount = require("../config/firebase-adminsdk.json");
 
 // Initialize Firebase Admin
-admin.initializeApp({
-    credential: admin.credential.cert(serviceAccount),
-});
+// admin.initializeApp({
+//     credential: admin.credential.cert(serviceAccount),
+// });
 
 // Function to generate JWT Token
 // const generateToken = (userId) => {

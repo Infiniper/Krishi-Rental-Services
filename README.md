@@ -1,3 +1,6 @@
+Improvements needed:
+1. Issue with the border of image in the home page.
+
 # Krishi Rental Service
 
 ## Overview
