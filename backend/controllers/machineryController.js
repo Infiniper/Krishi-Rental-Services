@@ -36,20 +36,40 @@ exports.getAllMachinery = async (req, res) => {
     }
 };
 
-// Get machinery by ID
+// // Get machinery by ID
+// exports.getMachineryById = async (req, res) => {
+//     const { id } = req.params;
+//     try {
+//         const result = await pool.query("SELECT * FROM machinery WHERE machineryid = $1", [id]);
+//         if (result.rows.length === 0) {
+//             return res.status(404).json({ message: "Machinery not found" });
+//         }
+//         res.json(result.rows[0]);
+//     } catch (error) {
+//         console.error(error);
+//         res.status(500).json({ message: "Error fetching machinery" });
+//     }
+// };
+
 exports.getMachineryById = async (req, res) => {
     const { id } = req.params;
     try {
-        const result = await pool.query("SELECT * FROM machinery WHERE machineryid = $1", [id]);
+        const result = await pool.query(`
+            SELECT machinery.*, 
+            (SELECT json_agg(imageurl) FROM machinery_images WHERE machinery_images.machineryid = machinery.machineryid) AS images 
+            FROM machinery WHERE machineryid = $1;
+        `, [id]);
+
         if (result.rows.length === 0) {
             return res.status(404).json({ message: "Machinery not found" });
         }
         res.json(result.rows[0]);
     } catch (error) {
         console.error(error);
-        res.status(500).json({ message: "Error fetching machinery" });
+        res.status(500).json({ message: "Error fetching machinery details" });
     }
 };
+
 
 // Add new machinery
 exports.addMachinery = async (req, res) => {

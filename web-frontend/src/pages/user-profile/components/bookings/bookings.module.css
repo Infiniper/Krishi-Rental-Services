@@ -1,0 +1,23 @@
+.margin{
+    color: rgba(0, 255, 255, 0);
+    margin: 80px;
+}
+
+.container h2{
+    margin-top: 50px;
+    font-family: lora;
+    font-size: 2.5rem;
+}
+.container h3{
+    /* margin-top: 50px; */
+    font-family: lora;
+    font-size: 2rem;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 30px;
+}

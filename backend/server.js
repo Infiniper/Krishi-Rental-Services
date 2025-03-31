@@ -6,10 +6,15 @@ const bcrypt = require('bcrypt');
 const authRoutes = require('./routes/authRoutes');
 const bookingRoutes = require('./routes/bookingRoutes');
 const machineryRoutes = require('./routes/machineryRoutes');
+const cors = require("cors");
+
 // const paymentRoutes = require('./routes/paymentRoutes');
 const app = express();
 const port = 5000;
 require('dotenv').config();
+
+// Enable CORS
+app.use(cors()); // This allows all origins (for development)
 
 // Middleware to parse JSON requests
 app.use(express.json());

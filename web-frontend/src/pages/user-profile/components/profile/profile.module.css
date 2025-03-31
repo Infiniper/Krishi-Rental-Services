@@ -1,0 +1,45 @@
+.dp img{
+    width: 400px;
+    height: auto;
+    border-radius: 50%;
+    margin-bottom: 10px;
+
+}
+
+.container {
+    margin: 30px;
+}
+
+.margin{
+    color: rgba(255, 0, 0, 0);
+    margin-top: 50px;
+}
+
+.box {
+    margin-left: 5%;
+}
+
+.container h1 {
+    font-size: 3rem;
+    font-weight: bold;
+    text-align: center;
+    font-family: Raleway;
+} 
+
+.details {
+    padding: 20px;
+    width: 400px;
+    height: auto;
+    border: solid 1px #003722;
+    border-radius: 20px;
+    box-shadow: 10px 10px #003722;
+    margin-bottom: 5%;
+
+}
+
+.details ul li p{
+    font: raleway;
+    color: black;
+    font-size: 1.25rem;
+    margin-bottom: 10px;
+}

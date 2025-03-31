@@ -1,0 +1,11 @@
+.blocks {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    gap: 20px;
+}
+
+.margin{
+    color: #00000000;
+    margin-top: 40px;
+}

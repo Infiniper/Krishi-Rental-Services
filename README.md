@@ -1,5 +1,12 @@
 Improvements needed:
 1. Issue with the border of image in the home page.
+2. Backend API response does not return ownername. After implementing login/sign-up, return it from backend and add it to booking.jsx.
+3. Hardcoded Nearby machinery button on home page
+4. Add good dummy data
+5. Available/ Unavailable on search-card
+6. rupees per acre
+7. Booked by in Service Provider
+8. Integrate the users and SP's Profiles
 
 # Krishi Rental Service
 
