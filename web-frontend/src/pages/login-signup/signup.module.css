@@ -1,0 +1,87 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: top;
+    background-color: #A0E4A5;
+    width: 700px;
+    margin: 200px 0px 200px 0px;
+    padding: 30px;
+    border-radius: 20px;
+
+    box-shadow: 2px 2px rgb(89, 179, 149);
+}
+
+.container h2{
+    font-size: 4rem;
+    font-family: raleway;
+}
+
+.box{
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    justify-content: center;
+    width: 500px;
+}
+
+.box2{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.box input{
+    width: 100%;
+    padding: 10px;
+    margin: 20px;
+    height: 40px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    font-family: lora;
+    box-shadow: 1px 1px rgb(89, 179, 149);
+}
+
+.box button{
+    height: 50px;
+    width: 250px;
+    margin: 20px;
+    background-color: #4dae4f;
+    border: none;
+    box-shadow: 1px 1px rgb(0, 128, 128);
+    border-radius: 5px;
+    font-size: 16px;
+    font-family: raleway;
+}
+
+.box button:hover{
+    background-color: #479d49;
+}
+
+.box p{
+    font-size: 1.1rem;
+    font-family: raleway;
+    color: black;
+    align-items: left;
+    /* margin-right: 170px ; */
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 0px;
+    margin-top: 10px;
+
+}
+
+.role {
+    font-size: 1.25rem;
+    font-family: raleway;
+
+    color: black;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width: 200px;
+    height: 50px;
+
+
+}

@@ -1,6 +1,9 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import API from "../../api/axiosInstance";
+import styles from "./signup.module.css";
+import Footer from "../../components/footer/footer";
+import Header from "../../components/header/header";
 
 const Signup = () => {
     const [user, setUser] = useState({
@@ -45,21 +48,41 @@ const Signup = () => {
 
         return (
             <div>
-                <h2>Signup</h2>
-                <form onSubmit={handleSubmit}>
-                    <input type="text" name="name" placeholder="Name" onChange={handleChange} required />
-                    <input type="text" name="phonenumber" placeholder="Phone Number" onChange={handleChange} required />
-                    <input type="email" name="email" placeholder="Email" onChange={handleChange} required />
-                    <input type="text" name="address" placeholder="Address" onChange={handleChange} required />
-                    <input type="password" name="password" placeholder="Password" onChange={handleChange} required />
-                    <select name="roleid" onChange={handleChange}>
-                        <option value="1">Farmer</option>
-                        <option value="2">Service Provider</option>
-                    </select>
-                    <button type="submit">Signup</button>
-                </form>
+                <Header />
+                <div className={styles.box2}>
+                    <div className={styles.container}>
+                        <h2>Signup</h2>
+                        <form onSubmit={handleSubmit} className={styles.box}>
+                            <p>Name:</p>
+                            <input type="text" name="name" placeholder="Name" onChange={handleChange} required />
+
+
+                            <p>Phone Number:</p>
+                            <input type="text" name="phonenumber" placeholder="Phone Number" onChange={handleChange} required />
+                            
+                            <p>Email:</p>
+                            <input type="email" name="email" placeholder="Email" onChange={handleChange} required />
+                            
+                            <p>Address:</p>
+                            <input type="text" name="address" placeholder="Address" onChange={handleChange} required />
+                            
+                            <p>Password:</p>
+                            <input type="password" name="password" placeholder="Password" onChange={handleChange} required />
+                            
+                            <p>Role:</p>
+                            <select name="roleid" onChange={handleChange} className={styles.role}>
+                                <option value="1">Farmer</option>
+                                <option value="2">Service Provider</option>
+                            </select>
+                            
+                            <button type="submit">Signup</button>
+                        </form>
+                    </div>
+                </div>
+                <Footer />
             </div>
         );
+        
     };
     
     export default Signup;

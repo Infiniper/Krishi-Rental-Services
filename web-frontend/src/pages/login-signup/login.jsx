@@ -1,6 +1,9 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import API from "../../api/axiosInstance";
+import styles from "./login.module.css";
+import Footer from "../../components/footer/footer";
+import Header from "../../components/header/header";
 
 const Login = () => {
     const [credentials, setCredentials] = useState({
@@ -35,13 +38,21 @@ const Login = () => {
     };
 
     return (
-        <div>
+            <div>
+                <Header />
+        <div className={styles.box2}>
+        <div className={styles.container}>
             <h2>Login</h2>
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={handleSubmit} className={styles.box}>
+                <p>Phone No.:</p>
                 <input type="text" name="phonenumber" placeholder="Phone Number" onChange={handleChange} required />
+                <p>Password:</p>
                 <input type="password" name="password" placeholder="Password" onChange={handleChange} required />
                 <button type="submit">Login</button>
             </form>
+        </div>
+        </div>
+        <Footer />
         </div>
     );
 };
