@@ -1,0 +1,40 @@
+.image img {
+    width: 100px;
+    height: auto;
+    max-height: 150px;
+    margin: 10px;
+    border-radius: 5px;
+}
+
+.user{
+    font-size: 1rem;
+    font-family: lora;
+    margin: 5px;
+}
+
+.user p {
+    color: black;
+}
+
+.machine p {
+    color: black;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: 10px;
+    background-color: rgb(255, 255, 147);
+    border: solid 2px rgb(206, 206, 2);
+    border-radius: 20px;
+    box-shadow: 2px 2px rgb(206, 206, 2);
+    width: 100%;
+    height: 115px;
+}
+
+.machine {
+    margin: 5px;
+    font-family: lora;
+}

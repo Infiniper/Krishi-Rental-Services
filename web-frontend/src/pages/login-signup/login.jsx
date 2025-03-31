@@ -38,21 +38,24 @@ const Login = () => {
     };
 
     return (
-            <div>
-                <Header />
-        <div className={styles.box2}>
-        <div className={styles.container}>
-            <h2>Login</h2>
-            <form onSubmit={handleSubmit} className={styles.box}>
-                <p>Phone No.:</p>
-                <input type="text" name="phonenumber" placeholder="Phone Number" onChange={handleChange} required />
-                <p>Password:</p>
-                <input type="password" name="password" placeholder="Password" onChange={handleChange} required />
-                <button type="submit">Login</button>
-            </form>
-        </div>
-        </div>
-        <Footer />
+        <div>
+            <Header />
+            <div className={styles.box2}>
+            <div className={styles.leaf}>
+                <img src="https://res.cloudinary.com/ddyxqpatx/image/upload/v1743443397/se/j7xv8uccjtua4ga7brux.png" alt="leaf" />
+            </div>
+                <div className={styles.container}>
+                    <h2>Login</h2>
+                    <form onSubmit={handleSubmit} className={styles.box}>
+                        <p>Phone No.:</p>
+                        <input type="text" name="phonenumber" placeholder="Phone Number" onChange={handleChange} required />
+                        <p>Password:</p>
+                        <input type="password" name="password" placeholder="Password" onChange={handleChange} required />
+                        <button type="submit">Login</button>
+                    </form>
+                </div>
+            </div>
+            <Footer />
         </div>
     );
 };

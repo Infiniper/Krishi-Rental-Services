@@ -11,6 +11,26 @@ exports.getBookings = async (req, res) => {
     }
 };
 
+// exports.getPendingBookingsForProvider = async (req, res) => {
+//     try {
+//         const { id } = req.params; // Provider ID
+
+//         const result = await pool.query(`
+//             SELECT b.*, m.type, m.model, m.registrationnumber, u.name AS client_name
+//             FROM bookings b
+//             JOIN machinery m ON b.machineryid = m.machineryid
+//             JOIN users u ON b.clientid = u.userid
+//             WHERE m.ownerid = $1 AND b.status = 'Pending'
+//         `, [id]);
+
+//         res.json(result.rows);
+//     } catch (error) {
+//         console.error(error);
+//         res.status(500).json({ message: "Error fetching pending bookings" });
+//     }
+// };
+
+
 // Create a new booking
 exports.createBooking = async (req, res) => {
     try {

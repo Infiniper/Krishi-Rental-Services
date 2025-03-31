@@ -12,10 +12,12 @@
 
     box-shadow: 2px 2px rgb(89, 179, 149);
 }
-
+ 
 .container h2{
     font-size: 4rem;
     font-family: raleway;
+    margin: 30px;
+    margin-bottom: 50px;
 }
 
 .box{
@@ -23,19 +25,20 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    width: 360px;
 }
 
 .box2{
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
-    justify-content: center;
+    justify-content: space-evenly;
 }
 
 .box input{
     width: 100%;
     padding: 10px;
-    margin: 20px;
+    margin: 20px 0px;
     height: 40px;
     border: none;
     border-radius: 5px;
@@ -65,9 +68,15 @@
     font-family: raleway;
     color: black;
     align-items: left;
-    margin-right: 170px ;
+    margin-right: 230px ;
     font-size: 22px;
     font-weight: bold;
     margin-bottom: 0px;
     margin-top: 10px;
+}
+
+.leaf img {
+    width: 700px;
+    height: auto;
+    margin: 20px;
 }

@@ -27,8 +27,10 @@ const Booking = () => {
     if (!machinery) return <h2>Loading...</h2>;
 
     return (
-        <div className={styles.container}>
+            <div>
             <Header />
+        <div className={styles.container}>
+
             <p className={styles.margin}>margin</p>
             <h1>Booking Details</h1>
             <div className={styles.box}>
@@ -54,6 +56,7 @@ const Booking = () => {
             </div>
             <Footer />
         </div>
+            </div>
     );
 };
 

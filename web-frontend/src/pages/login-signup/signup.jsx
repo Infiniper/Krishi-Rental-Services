@@ -50,6 +50,9 @@ const Signup = () => {
             <div>
                 <Header />
                 <div className={styles.box2}>
+                    <div className={styles.leaf}>
+                        <img src="https://res.cloudinary.com/ddyxqpatx/image/upload/v1743443397/se/j7xv8uccjtua4ga7brux.png" alt="leaf" />
+                    </div>
                     <div className={styles.container}>
                         <h2>Signup</h2>
                         <form onSubmit={handleSubmit} className={styles.box}>

@@ -42,7 +42,7 @@ const AddMachine = () => {
             <h2>Add New Machine</h2>
             <div className={styles.element}>
                 <label>Type:</label>
-                <input type="text" name="Type" value={formData.type} onChange={handleChange} />
+                <input type="text" name="type" value={formData.type} onChange={handleChange} />
             </div>
             <div className={styles.element}>
                 <label>Model:</label>

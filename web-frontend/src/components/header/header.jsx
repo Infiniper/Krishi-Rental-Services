@@ -70,7 +70,7 @@ const handleLogout = () => {
                                             Profile
                                         </a>
                                     </li>
-                                    <li> <a href="/orders">Orders</a></li>
+                                    {/* <li> <a href="/orders">Orders</a></li> */}
                                     <li><button onClick={handleLogout} style={{ background: "none", border: "none", cursor: "pointer", color: "red" }}>Logout</button></li>
                                 </ul>
                             </div>

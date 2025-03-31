@@ -12,6 +12,8 @@ const {
 // Create a new booking (Protected)
 router.post("/",   createBooking);
 
+router.get("/provider/:id", bookingController.getPendingBookingsForProvider);
+
 // Approve booking (Protected)
 router.put("/:bookingid/approve",   approveBooking);
 

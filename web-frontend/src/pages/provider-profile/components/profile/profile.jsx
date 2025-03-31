@@ -19,7 +19,7 @@ const Profile = ({username, image, email, phone, address}) => {
                 </div>
             </div>
             <div className={styles.add}>
-                    <a href="http://localhost:3000/add-machine"><button>Add A Machine</button></a>
+                    <a href="http://localhost:3000/add-machine"><button>Add a Machine</button></a>
                 </div>
         </div>
     )
