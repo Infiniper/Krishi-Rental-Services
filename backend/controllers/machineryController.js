@@ -73,10 +73,7 @@ exports.getMachineryById = async (req, res) => {
 
 // Add new machinery
 exports.addMachinery = async (req, res) => {
-    console.log("➡️ Incoming request to add machinery...");
-    console.log("📥 Request Body:", req.body);
-    console.log("📸 Uploaded Files:", req.files); // For file uploads (Cloudinary)
-
+    
     const { type, model, registrationnumber, status } = req.body;
     // const ownerid = req.user.userId; // Extract user ID from JWT
     // When a user makes a request to a protected route, the authenticate middleware verifies the JWT token and attaches the decoded user information to req.user. This allows controllers to access details of the authenticated user.
@@ -99,7 +96,7 @@ exports.addMachinery = async (req, res) => {
         );
 
         const machineryid = machineryResult.rows[0].machineryid; // Get the newly inserted machinery ID
-        console.log("✅ Machinery inserted successfully with ID:", machineryid);
+        console.log(" Machinery inserted successfully with ID:", machineryid);
         // Step 2: Upload Images to Cloudinary & Store URLs in the database
         const imageUrls = [];
         if (req.files && req.files.length > 0) {
@@ -114,7 +111,7 @@ exports.addMachinery = async (req, res) => {
                 );
             }
         }
-        console.log("✅ Image URLs saved successfully:", imageUrls);
+        console.log("Image URLs saved successfully:", imageUrls);
 
         res.status(201).json({ 
             message: "Machinery added successfully", 

@@ -1,12 +1,17 @@
 const express = require('express');
+require("dotenv").config();
 const { Pool } = require('pg');
 const pool = require('./config/db');
 const path = require('path');
 const bcrypt = require('bcrypt');
-const authRoutes = require('./routes/authRoutes');
+const authRoutes = require("./routes/auth");
 const bookingRoutes = require('./routes/bookingRoutes');
 const machineryRoutes = require('./routes/machineryRoutes');
 const cors = require("cors");
+
+
+
+
 
 // const paymentRoutes = require('./routes/paymentRoutes');
 const app = express();
@@ -20,7 +25,7 @@ app.use(cors()); // This allows all origins (for development)
 app.use(express.json());
 
 // Here I am Registering routes.
-app.use('/api/auth', authRoutes);
+app.use("/api/auth", authRoutes);
 app.use('/api/bookings', bookingRoutes);
 app.use('/api/machinery', machineryRoutes);
 // app.use('/api/payments', paymentRoutes);

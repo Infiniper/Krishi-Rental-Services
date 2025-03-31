@@ -7,6 +7,7 @@ Improvements needed:
 6. rupees per acre
 7. Booked by in Service Provider
 8. Integrate the users and SP's Profiles
+9. Add profile photo
 
 # Krishi Rental Service
 
