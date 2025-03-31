@@ -1,23 +1,42 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import styles from "./header.module.css";
 import Button1 from "../button1/button1";
 
-
 const Header = () => {
-    const [isMenuOpen, setIsMenuOpen] = useState(false);
-    const [isLoggedIn, setIsLoggedIn] = useState(false); // Track login state
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(false); // Track login state
+  const [user, setUser] = useState(null);
+  const navigate = useNavigate();
 
-    const toggleMenu = () => {
-        setIsMenuOpen(!isMenuOpen);
-    };
+useEffect(() => {
+        // Check if user is logged in
+        const storedUser = localStorage.getItem("user");
+        if (storedUser) {
+            setUser(JSON.parse(storedUser));
+            setIsLoggedIn(true);
+        }
+    }, []);
 
-    const toggleLogin = () => {
-        setIsLoggedIn(!isLoggedIn);
-    }
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
 
-    return (
+//   const toggleLogin = () => {
+//     setIsLoggedIn(!isLoggedIn);
+//   };
+
+
+const handleLogout = () => {
+    localStorage.removeItem("token");
+    localStorage.removeItem("user");
+    setIsLoggedIn(false);
+    navigate("/login"); // Redirect to login page
+};
+
+ return (
         <header className={styles.header}>
-            <div className={styles.headerContent} style={{display: "flex", justifyContent: "space-between", width: "100%", alignItems: "center"}}>
+            <div className={styles.headerContent} style={{ display: "flex", justifyContent: "space-between", width: "100%", alignItems: "center" }}>
                 <div className={styles.hamburger} onClick={toggleMenu}>
                     <div></div>
                     <div></div>
@@ -46,14 +65,18 @@ const Header = () => {
                             />
                             <div className={styles.dropdown}>
                                 <ul>
-                                    <li><a href="/account">Profile</a></li>
+                                    <li>
+                                        <a href={user?.roleid === 1 ? "/user-profile" : "/provider-profile"}>
+                                            Profile
+                                        </a>
+                                    </li>
                                     <li> <a href="/orders">Orders</a></li>
-                                    <li><a href="/logout" onClick={toggleLogin}>Logout</a></li>
+                                    <li><button onClick={handleLogout} style={{ background: "none", border: "none", cursor: "pointer", color: "red" }}>Logout</button></li>
                                 </ul>
                             </div>
                         </div>
                     ) : (
-                        <Button1 label="Login/Signup" onClick={toggleLogin}/>
+                        <Button1 label="Login/Signup" onClick={() => navigate("/login")} />
                     )}
                 </div>
             </nav>
@@ -62,8 +85,6 @@ const Header = () => {
 };
 
 export default Header;
-
-
 
 /*
  color scheme:-

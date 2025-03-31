@@ -1,0 +1,69 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 30px;
+    padding: 20px;
+    margin-top: 150px;
+    margin-bottom: 150px;
+    width: 40%;
+    background-color: ghostwhite;
+}
+
+.container h2 {
+    font-size: 2rem;
+    font-family: raleway;
+    margin-bottom: 100px;
+}
+
+.container div {
+    margin: 20px 50px;
+    width: 500px;
+    /* background-color: antiquewhite; */
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-family: lora;
+    font-size: 1.25rem;
+}
+
+.box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.submit button {
+    background-color: #4CAF50; /* Green background */
+    border: none; /* No border */
+    color: white; /* White text */
+    padding: 15px 32px; /* Padding */
+    text-align: center; /* Centered text */
+    text-decoration: none; /* No underline */
+    display: inline-block; /* Inline-block element */
+    font-size: 16px; /* Font size */
+    margin: 4px 2px; /* Margin */
+    cursor: pointer; /* Pointer cursor on hover */
+    border-radius: 8px; /* Rounded corners */
+    transition: background-color 0.3s ease; /* Smooth transition for background color */
+  }
+  
+  .submit button:hover {
+    background-color: #45a049; /* Darker green on hover */
+  }
+
+  .element input {
+    width: 220px;
+    height: 30px;
+    border-radius: 4px;
+    border: solid 1px #45a049;
+  }
+
+  .images input {
+    width: 220px;
+    height: 30px;
+    font-size: 16px;
+
+  }
