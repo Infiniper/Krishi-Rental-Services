@@ -7,6 +7,8 @@ import "./styles/global.css";
 import Search from "./pages/search/search";
 import About from "./pages/about/about";
 import Booking from "./pages/booking/booking";
+import UserProfile from "./pages/user-profile/user-profile";
+import ProviderProfile from "./pages/provider-profile/provider-profile";
 
 // function App() {
 //   return(
@@ -35,6 +37,8 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/search" element={<Search />} />
         <Route path="/booking/:id" element={<Booking />} /> 
+        <Route path="/user-profile" element={<UserProfile />} /> 
+        <Route path="/provider-profile" element={<ProviderProfile />} /> 
       </Routes>
     </Router>
   );
