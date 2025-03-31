@@ -20,9 +20,6 @@ router.get("/", getAllMachinery);
 // Get single machinery by ID (Public)
 router.get("/:id", getMachineryById);
 
-// Add new machinery (Protected)
-router.post("/",   addMachinery);
-
 // Update machinery details (Protected)
 router.put("/:id",   updateMachinery);
 

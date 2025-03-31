@@ -1,0 +1,79 @@
+.image img {
+    width: 100px;
+    height: auto;
+    max-height: 150px;
+    margin: 10px;
+    border-radius: 5px;
+}
+
+.user{
+    font-size: 1rem;
+    font-family: lora;
+    margin: 5px;
+}
+
+.user p {
+    color: black;
+}
+
+.machine p {
+    color: black;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px;
+    background-color: rgb(255, 255, 147);
+    border: solid 2px rgb(206, 206, 2);
+    border-radius: 20px;
+    box-shadow: 2px 2px rgb(206, 206, 2);
+    width: 100%;
+    height: 115px;
+}
+
+.machine {
+    margin: 5px;
+    font-family: lora;
+}
+
+.approve button{
+    background-color: #4CAF50; /* Green background */
+    border: none; /* No border */
+    color: white; /* White text */
+    padding: 15px 32px; /* Padding */
+    text-align: center; /* Centered text */
+    text-decoration: none; /* No underline */
+    display: inline-block; /* Inline-block element */
+    font-size: 16px; /* Font size */
+    margin: 4px 2px; /* Margin */
+    cursor: pointer; /* Pointer cursor on hover */
+    border-radius: 8px; /* Rounded corners */
+    transition: background-color 0.3s ease; /* Smooth transition for background color */
+  }
+  
+  .approve button:hover {
+    background-color: #45a049; /* Darker green on hover */
+  }
+
+  .reject button{
+    background-color: red; /* Green background */
+    border: none; /* No border */
+    color: white; /* White text */
+    padding: 15px 32px; /* Padding */
+    text-align: center; /* Centered text */
+    text-decoration: none; /* No underline */
+    display: inline-block; /* Inline-block element */
+    font-size: 16px; /* Font size */
+    margin: 4px 2px; /* Margin */
+    cursor: pointer; /* Pointer cursor on hover */
+    border-radius: 8px; /* Rounded corners */
+    transition: background-color 0.3s ease; /* Smooth transition for background color */
+    margin-right: 10px ;
+  }
+  
+  .reject button:hover {
+    background-color: rgb(220, 4, 4); /* Darker green on hover */
+  }

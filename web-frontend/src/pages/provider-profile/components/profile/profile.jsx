@@ -18,6 +18,9 @@ const Profile = ({username, image, email, phone, address}) => {
                     </ul>
                 </div>
             </div>
+            <div className={styles.add}>
+                    <a href="http://localhost:3000/add-machine"><button>Add A Machine</button></a>
+                </div>
         </div>
     )
 }
